@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Instrutor | Frequência</title>
+    <link rel="stylesheet" href="css/frequencia.css">
+</head>
+<body>
+<div class="app-shell">
+    <header class="topbar">
+        <a class="brand" href="dashboard.html"><span class="brand-mark">PI</span><span class="brand-text"><strong>Portal do Instrutor</strong><span>Gestão acadêmica</span></span></a>
+        <div class="topbar-actions"><div class="user-chip"><span class="avatar" data-user-initials>U</span><span><strong data-user-name>Usuário</strong><span data-user-email>Instrutor</span></span></div><button class="btn btn-secondary btn-small" data-action="logout">Sair</button></div>
+    </header>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="nav-label">Navegação</div>
+            <a class="nav-link" href="dashboard.html"><span class="nav-key">01</span>Visão geral</a>
+            <a class="nav-link" href="turma.html"><span class="nav-key">02</span>Turmas</a>
+            <a class="nav-link" href="turma.html"><span class="nav-key">03</span>Alunos e UCs</a>
+            <a class="nav-link active" href="turma.html"><span class="nav-key">04</span>Frequência</a>
+        </aside>
+        <main class="content">
+            <div class="page-header">
+                <div><h1>Registro de frequência</h1><p>Registre a presença de toda a turma e acompanhe o histórico da unidade curricular.</p></div>
+                <a class="btn btn-secondary" id="btnVoltarTurma" href="turma.html">Voltar para turma</a>
+            </div>
+
+            <section class="card">
+                <div class="card-title"><div><h2>Dados da aula</h2><p>O sistema controla a sequência das aulas e impede registros fora do período.</p></div></div>
+                <div class="form-grid">
+                    <div class="field"><label>Turma</label><input id="turma" readonly></div>
+                    <div class="field"><label for="uc">Unidade curricular</label><select id="uc"><option value="">Selecione uma UC</option></select></div>
+                    <div class="field"><label for="dataAula">Data da aula</label><input id="dataAula" type="date"></div>
+                    <div class="field"><label for="numeroAula">Número da aula</label><input id="numeroAula" type="number" min="1" readonly></div>
+                </div>
+            </section>
+
+            <section class="card" style="margin-top:18px">
+                <div class="card-title"><div><h2>Chamada</h2><p id="resumoChamada">Selecione uma unidade curricular para iniciar.</p></div><button class="btn btn-primary" id="btnSalvar" type="button">Salvar frequência</button></div>
+                <div class="table-wrap"><table><thead><tr><th>Aluno</th><th>Matrícula</th><th>Frequência</th><th>Histórico</th></tr></thead><tbody id="listaAlunos"></tbody></table></div>
+            </section>
+
+            <section class="grid grid-2" style="margin-top:18px">
+                <div class="card"><div class="card-title"><div><h2>Histórico de aulas</h2><p>Aulas já concluídas para a UC selecionada.</p></div></div><div class="table-wrap"><table><thead><tr><th>Aula</th><th>Data</th><th>Status</th></tr></thead><tbody id="listaAulas"></tbody></table></div></div>
+                <div class="card"><div class="card-title"><div><h2>Alertas</h2><p>Alunos abaixo do limite de frequência ou com faltas consecutivas.</p></div></div><div id="alertasFrequencia"><div class="empty">Nenhum dado disponível.</div></div></div>
+            </section>
+        </main>
+    </div>
+</div>
+<div class="toast-area"></div>
+<script src="js/auth.js"></script>
+<script src="js/frequencia.js"></script>
+</body>
+</html>

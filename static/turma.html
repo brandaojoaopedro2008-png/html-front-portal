@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Instrutor | Turmas</title>
+    <link rel="stylesheet" href="css/turma.css">
+</head>
+<body>
+<div class="app-shell">
+    <header class="topbar">
+        <a class="brand" href="dashboard.html"><span class="brand-mark">PI</span><span class="brand-text"><strong>Portal do Instrutor</strong><span>Gestão acadêmica</span></span></a>
+        <div class="topbar-actions"><div class="user-chip"><span class="avatar" data-user-initials>U</span><span><strong data-user-name>Usuário</strong><span data-user-email>Instrutor</span></span></div><button class="btn btn-secondary btn-small" data-action="logout">Sair</button></div>
+    </header>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="nav-label">Navegação</div>
+            <a class="nav-link" href="dashboard.html"><span class="nav-key">01</span>Visão geral</a>
+            <a class="nav-link active" href="turma.html"><span class="nav-key">02</span>Turmas</a>
+            <a class="nav-link active" href="turma.html"><span class="nav-key">03</span>Alunos e UCs</a>
+            <a class="nav-link" href="turma.html"><span class="nav-key">04</span>Frequência</a>
+        </aside>
+        <main class="content">
+            <div class="page-header">
+                <div><h1>Gestão de turmas</h1><p>Selecione uma turma para administrar sua estrutura acadêmica.</p></div>
+                <button class="btn btn-primary" id="btnNovaTurma">Nova turma</button>
+            </div>
+
+            <section class="card">
+                <div class="form-grid">
+                    <div class="field"><label for="selectTurma">Turma</label><select id="selectTurma"><option value="">Selecione uma turma</option></select></div>
+                    <div class="field"><label>Turma selecionada</label><input id="infoTurmaSelecionada" value="Nenhuma turma selecionada" readonly></div>
+                </div>
+            </section>
+
+            <section id="painelTurma" style="display:none">
+                <div class="grid grid-3" style="margin-top:18px">
+                    <div class="stat"><div class="label">Alunos</div><div class="value" id="contadorAlunos">0</div><div class="hint">Cadastros na turma</div></div>
+                    <div class="stat"><div class="label">Unidades curriculares</div><div class="value" id="contadorUCs">0</div><div class="hint">Componentes da turma</div></div>
+                    <div class="stat"><div class="label">Ações</div><div class="actions" style="margin-top:10px"><button class="btn btn-accent" id="btnAcessarFrequencia">Abrir frequência</button></div></div>
+                </div>
+
+                <section class="card" style="margin-top:18px">
+                    <div class="card-title"><div><h2>Alunos</h2><p>Cadastre e mantenha a lista de alunos da turma.</p></div><button class="btn btn-primary btn-small" id="btnNovoAluno">Adicionar aluno</button></div>
+                    <div class="table-wrap"><table><thead><tr><th>Nome</th><th>Matrícula</th><th style="text-align:right">Ações</th></tr></thead><tbody id="corpoTabelaAlunos"></tbody></table></div>
+                </section>
+
+                <section class="card">
+                    <div class="card-title"><div><h2>Unidades curriculares</h2><p>Defina o total de aulas previsto para cada componente.</p></div><button class="btn btn-primary btn-small" id="btnNovaUC">Adicionar UC</button></div>
+                    <div class="table-wrap"><table><thead><tr><th>Unidade curricular</th><th>Total de aulas</th><th>Aulas registradas</th><th style="text-align:right">Ações</th></tr></thead><tbody id="corpoTabelaUCs"></tbody></table></div>
+                </section>
+
+                <section class="card">
+                    <div class="card-title"><div><h2>Configuração da turma</h2><p>Altere o nome ou remova a turma quando não houver dependências.</p></div></div>
+                    <div class="actions"><button class="btn btn-secondary" id="btnEditarTurma">Editar nome</button><button class="btn btn-danger" id="btnExcluirTurma">Excluir turma</button></div>
+                </section>
+            </section>
+
+            <section id="estadoInicial" class="card" style="margin-top:18px"><div class="empty"><strong>Selecione uma turma</strong>Depois de selecionar, os alunos, unidades curriculares e ações de frequência serão exibidos aqui.</div></section>
+        </main>
+    </div>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal">
+        <div class="modal-header"><div><h2 id="modalTitulo">Cadastro</h2><p id="modalDescricao">Preencha os dados.</p></div><button class="btn btn-secondary icon-btn" id="modalFechar" type="button">Fechar</button></div>
+        <form id="modalForm" class="form-grid"></form>
+        <div class="form-actions"><button class="btn btn-secondary" id="modalCancelar" type="button">Cancelar</button><button class="btn btn-primary" id="modalSalvar" type="submit">Salvar</button></div>
+    </div>
+</div>
+<div class="toast-area"></div>
+<script src="js/auth.js"></script>
+<script src="js/turma.js"></script>
+</body>
+</html>

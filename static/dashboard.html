@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Instrutor | Dashboard</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="app-shell">
+    <header class="topbar">
+        <a class="brand" href="dashboard.html">
+            <span class="brand-mark">PI</span>
+            <span class="brand-text"><strong>Portal do Instrutor</strong><span>Gestão acadêmica</span></span>
+        </a>
+        <div class="topbar-actions">
+            <div class="user-chip">
+                <span class="avatar" data-user-initials>U</span>
+                <span><strong data-user-name>Usuário</strong><span data-user-email>Instrutor</span></span>
+            </div>
+            <button class="btn btn-secondary btn-small" data-action="logout">Sair</button>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="nav-label">Navegação</div>
+            <a class="nav-link active" href="dashboard.html"><span class="nav-key">01</span>Visão geral</a>
+            <a class="nav-link" href="turma.html"><span class="nav-key">02</span>Turmas</a>
+            <a class="nav-link" href="turma.html"><span class="nav-key">03</span>Alunos e UCs</a>
+            <a class="nav-link" href="turma.html"><span class="nav-key">04</span>Frequência</a>
+        </aside>
+
+        <main class="content">
+            <div class="page-header">
+                <div><h1>Visão geral</h1><p>Acompanhe rapidamente a situação das suas turmas e atividades.</p></div>
+                <div class="actions"><a class="btn btn-primary" href="turma.html">Gerenciar turmas</a></div>
+            </div>
+
+            <section class="grid grid-4" id="stats">
+                <div class="stat"><div class="label">Turmas ativas</div><div class="value" id="statTurmas">—</div><div class="hint">Turmas vinculadas ao usuário</div></div>
+                <div class="stat"><div class="label">Alunos</div><div class="value" id="statAlunos">—</div><div class="hint">Somatório das turmas</div></div>
+                <div class="stat"><div class="label">Unidades curriculares</div><div class="value" id="statUCs">—</div><div class="hint">Componentes cadastrados</div></div>
+                <div class="stat"><div class="label">Aulas registradas</div><div class="value" id="statAulas">—</div><div class="hint">Histórico de frequência</div></div>
+            </section>
+
+            <section class="card" style="margin-top:18px">
+                <div class="card-title"><div><h2>Minhas turmas</h2><p>Acesse uma turma para administrar alunos, unidades curriculares e frequência.</p></div></div>
+                <div id="listaTurmasDashboard" class="grid grid-3"></div>
+            </section>
+        </main>
+    </div>
+</div>
+<div class="toast-area"></div>
+<script src="js/auth.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Instrutor | Acesso</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<div class="login-page">
+    <section class="login-side">
+        <div>
+            <a class="brand" href="index.html">
+                <span class="brand-mark">PI</span>
+                <span class="brand-text"><strong style="color:#fff">Portal do Instrutor</strong><span style="color:#c9dced">Gestão acadêmica</span></span>
+            </a>
+            <div class="line"></div>
+            <h1>Gestão de turmas e frequência em um único portal.</h1>
+            <p>Organize suas turmas, mantenha os alunos atualizados, cadastre unidades curriculares e registre a frequência das aulas com histórico e alertas.</p>
+        </div>
+        <small>Ambiente acadêmico</small>
+    </section>
+
+    <main class="login-panel">
+        <section class="auth-card">
+            <h2>Acessar sistema</h2>
+            <p>Entre com as credenciais do seu usuário.</p>
+            <form id="loginForm" class="auth-form">
+                <div class="field">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" autocomplete="email" placeholder="nome@exemplo.com" required>
+                </div>
+                <div class="field">
+                    <label for="senha">Senha</label>
+                    <input id="senha" type="password" autocomplete="current-password" placeholder="Digite sua senha" required>
+                </div>
+                <button class="btn btn-primary" type="submit" id="btnLogin">Entrar</button>
+            </form>
+            <div id="mensagem" class="help" style="margin-top:12px"></div>
+            <div class="auth-footer">O acesso é disponibilizado pelo administrador do ambiente.</div>
+        </section>
+    </main>
+</div>
+<script src="js/auth.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
